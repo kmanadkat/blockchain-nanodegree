@@ -9,7 +9,7 @@ Udacity Become Blockchain Developer Nanodegree first project submission branch. 
 2. Extract the zip file & open terminal in root directory where `package.json` file is present.
 3. To install all libraries execute `npm install`
 4. To run the RESTful application execute `npm start`
-5. Import [Postman Collection json]() in Postman & interact with Blockchain.
+5. Import [Postman Collection json](https://github.com/kmanadkat/blockchain-nanodegree/blob/submission_prj1/BlockChain%20Prj%201.postman_collection.json) in Postman & interact with Blockchain.
 
 
 ### Problem Statement
