@@ -1,0 +1,14 @@
+{
+  "name": "01_private_blockchain",
+  "version": "1.0.0",
+  "description": "Private Blockchain with Udacity Instructor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Krupesh Anadkat",
+  "license": "MIT",
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  }
+}
