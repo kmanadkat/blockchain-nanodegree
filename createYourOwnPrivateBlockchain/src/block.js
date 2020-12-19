@@ -40,8 +40,11 @@ class Block {
         return new Promise((resolve, reject) => {
             // Save in auxiliary variable the current block hash
             const blockHash = self.hash;                                
-            // Recalculate the hash of the Block
-            const calculatedHash = SHA256(JSON.stringify(self));
+            // Recalculate the hash of the Block - before make hash null, 
+            // because while creating block's hash for first time, its own hash was null
+            self.hash = null;
+            const calculatedHash = SHA256(JSON.stringify(self)).toString();
+            self.hash = blockHash;
             // Comparing if the hashes changed
             resolve(blockHash === calculatedHash);
         });
@@ -64,10 +67,10 @@ class Block {
         const decodedData = JSON.parse(hex2ascii(blockBody));
         // Resolve with the data if the object isn't the Genesis block
         return new Promise((resolve, reject) => {
-            if(self.previousBlockHash === null || self.previousBlockHash === ''){
+            if(self.previousBlockHash !== null && self.previousBlockHash !== ''){
                 resolve(decodedData);
             } else {
-                reject("Error occured, Genesis block doesnot have any data");
+                resolve(null);
             }
         });
     }
